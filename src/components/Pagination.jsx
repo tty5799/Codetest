@@ -27,7 +27,9 @@ const Pagination = ({ total, limit, page, setPage }) => {
               </>
             ) : (
               <>
-                <LeftIcon3 />
+                <PageResetBtn onClick={() => setPage(1)} disabled={page === 1}>
+                  <LeftIcon3 />
+                </PageResetBtn>
                 <LeftIconButton
                   onClick={() => setPage(page - 1)}
                   disabled={page === 1}
@@ -64,7 +66,12 @@ const Pagination = ({ total, limit, page, setPage }) => {
                 >
                   <RightIcon1 />
                 </RightIconButton>
-                <RightIcon2 />
+                <PageLastBtn
+                  onClick={() => setPage(numPages)}
+                  disabled={page === numPages}
+                >
+                  <RightIcon2 />
+                </PageLastBtn>
               </>
             )}
           </div>
@@ -86,6 +93,30 @@ const Button = styled.button`
     cursor: revert;
     transform: revert;
     color: #000000;
+  }
+`;
+
+const PageLastBtn = styled.button`
+  border: none;
+  background-color: transparent;
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 12px;
+  cursor: pointer;
+  &[disabled] {
+    cursor: revert;
+    transform: revert;
+  }
+`;
+
+const PageResetBtn = styled.button`
+  border: none;
+  background-color: transparent;
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 12px;
+  cursor: pointer;
+  &[disabled] {
+    cursor: revert;
+    transform: revert;
   }
 `;
 
