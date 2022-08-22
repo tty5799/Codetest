@@ -1,14 +1,11 @@
 import styled from "styled-components";
 import CardData from "./CardData";
-
 import { useEffect, useState } from "react";
 import Pagination from "./Pagination";
 
-const Card = ({ filter, item, result }) => {
-  // const buildingNum = props.filter;
-  // const item = props.item;
-  // const resultData = props.result;
+import { ReactComponent as NoData } from "../assets/nodata.svg";
 
+const Card = ({ filter, item, result }) => {
   const [limit, setLimit] = useState(8);
   const [page, setPage] = useState(1);
   const [CardList, setCardList] = useState([]);
@@ -107,13 +104,24 @@ const Card = ({ filter, item, result }) => {
 
   return (
     <>
-      <CardBox>
-        {CardList.slice(offset, offset + limit).map((item, idx) => {
-          return <CardData item={item} key={idx} result={resultState} />;
-        })}
-      </CardBox>
+      {CardList.length === 0 && resultState === false ? null : null}
+      {CardList.length === 0 && resultState === true ? (
+        <NodataBox>
+          <ImageBox>
+            <NoData width="9rem" height="50%" />
+          </ImageBox>
+          <TextBox>해당 글을 찾을 수 없어요!</TextBox>
+        </NodataBox>
+      ) : (
+        <CardBox>
+          {CardList.slice(offset, offset + limit).map((item, idx) => {
+            return <CardData item={item} key={idx} result={resultState} />;
+          })}
+        </CardBox>
+      )}
+
       <Pagination
-        total={item.length}
+        total={CardList.length}
         limit={limit}
         page={page}
         setPage={setPage}
@@ -124,6 +132,21 @@ const Card = ({ filter, item, result }) => {
 
 const CardBox = styled.div`
   margin: 0 auto;
+`;
+
+const NodataBox = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+const ImageBox = styled.div`
+  margin: 1rem auto 0 auto;
+`;
+
+const TextBox = styled.div`
+  margin: 2rem auto;
+  font-size: 30px;
+  font-weight: bold;
 `;
 
 export default Card;
