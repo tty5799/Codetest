@@ -33,7 +33,6 @@ const Card = ({ filter, item, result }) => {
         setResultState(true);
       } else {
         setCardList(item);
-        setResultState(false);
       }
     } else if (filter === "all") {
       if (result.length !== 0) {
@@ -41,12 +40,12 @@ const Card = ({ filter, item, result }) => {
         setResultState(true);
       } else {
         setCardList(item);
-        setResultState(false);
       }
     } else if (filter === "5") {
       if (result.length !== 0) {
-        const resultData = result.filter((itemList) => {
-          return itemList.building_count >= 5;
+        const resultData = result.filter((List) => {
+          console.log(List.building_count);
+          return List.building_count >= 5;
         });
         setCardList(resultData);
       } else {
@@ -54,32 +53,55 @@ const Card = ({ filter, item, result }) => {
           return itemList.building_count >= 5;
         });
         setCardList(filterData);
-        setResultState(false);
       }
     } else if (filter === "4") {
-      const filterData = item.filter((itemList) => {
-        return itemList.building_count === 4;
-      });
-      setCardList(filterData);
-      setResultState(false);
+      if (result.length !== 0) {
+        const resultData = result.filter((itemList) => {
+          return itemList.building_count === 4;
+        });
+        setCardList(resultData);
+      } else {
+        const filterData = item.filter((itemList) => {
+          return itemList.building_count === 4;
+        });
+        setCardList(filterData);
+      }
     } else if (filter === "3") {
-      const filterData = item.filter((itemList) => {
-        return itemList.building_count === 3;
-      });
-      setCardList(filterData);
-      setResultState(false);
+      if (result.length !== 0) {
+        const resultData = result.filter((itemList) => {
+          return itemList.building_count === 3;
+        });
+        setCardList(resultData);
+      } else {
+        const filterData = item.filter((itemList) => {
+          return itemList.building_count === 3;
+        });
+        setCardList(filterData);
+      }
     } else if (filter === "2") {
-      const filterData = item.filter((itemList) => {
-        return itemList.building_count === 2;
-      });
-      setCardList(filterData);
-      setResultState(false);
+      if (result.length !== 0) {
+        const resultData = result.filter((itemList) => {
+          return itemList.building_count === 2;
+        });
+        setCardList(resultData);
+      } else {
+        const filterData = item.filter((itemList) => {
+          return itemList.building_count === 2;
+        });
+        setCardList(filterData);
+      }
     } else if (filter === "1") {
-      const filterData = item.filter((itemList) => {
-        return itemList.building_count === 1;
-      });
-      setCardList(filterData);
-      setResultState(false);
+      if (result.length !== 0) {
+        const resultData = result.filter((itemList) => {
+          return itemList.building_count === 1;
+        });
+        setCardList(resultData);
+      } else {
+        const filterData = item.filter((itemList) => {
+          return itemList.building_count === 1;
+        });
+        setCardList(filterData);
+      }
     }
   }, [filter, item, result]);
 
