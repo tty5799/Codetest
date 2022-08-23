@@ -1,11 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import styled from "styled-components";
-import Card from "../components/Card";
-import Filter from "../components/Filter";
 import Search from "../components/Search";
-import { AiOutlineSearch } from "react-icons/ai";
-import Header from "../components/Header";
 
 const Main = () => {
   const [dataList, setDataList] = useState([]);
@@ -17,30 +13,11 @@ const Main = () => {
       )
       .then(({ data }) => {
         setDataList(data);
-        data = data.replace(/[ \[\]\n:}"]|nickname|oname|building_count/g, "");
-
-        let cardList = data.split("{");
-
-        let newList = [];
-
-        cardList.map((v, i) => {
-          if (i === 0) return;
-          let newData = v.split(",");
-          let newObj = {
-            nickname: newData[0],
-            oname: newData[1],
-            building_count: newData[2],
-          };
-          newList.push(newObj);
-        });
-        setDataList(newList);
       })
       .catch((err) => {
         console.log(err);
       });
   }, []);
-
-  // 검색 기능
 
   return (
     <>

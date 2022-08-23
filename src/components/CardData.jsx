@@ -11,11 +11,11 @@ const CardData = (props) => {
     <>
       <CardBox>
         <DataBox>
-          <Aaa>
+          <HeadBox>
             <ImageBox>
               <User width="60px" height="60px" />
             </ImageBox>
-          </Aaa>
+          </HeadBox>
           <MiddleBox>
             <TitleBox>
               {props.result === true ? (
@@ -43,7 +43,7 @@ const CardData = (props) => {
   );
 };
 
-const Aaa = styled.div`
+const HeadBox = styled.div`
   margin-right: 2.25rem;
   display: flex;
   align-items: center;
@@ -115,13 +115,10 @@ const DataBox = styled.div`
 `;
 const ImageBox = styled.div`
   width: 3.75rem;
-
-  /* margin-left: 1.5rem; */
 `;
 
 const CardBox = styled.div`
   width: 32rem;
-  /* height: 5.875rem; */
   padding: 1rem 1.5rem;
   margin: 0 auto 1rem auto;
   border-radius: 10px;

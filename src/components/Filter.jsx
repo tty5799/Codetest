@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { RiEqualizerLine } from "react-icons/ri";
 import { ReactComponent as Icon } from "../assets/inactive.svg";
 import { ReactComponent as ActiveIcon } from "../assets/active.svg";
 import { useState } from "react";

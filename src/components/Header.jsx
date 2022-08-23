@@ -6,8 +6,8 @@ const Header = () => {
   return (
     <>
       <ImageBox>
-        <div className="aaa">
-          <div className="ccc" />
+        <div className="patten">
+          <div className="char" />
         </div>
       </ImageBox>
     </>
@@ -15,7 +15,7 @@ const Header = () => {
 };
 
 const ImageBox = styled.div`
-  .aaa {
+  .patten {
     background-image: url(${Ptn});
     background-size: cover;
     background-repeat: unset;
@@ -31,7 +31,7 @@ const ImageBox = styled.div`
       height: 15rem;
     }
   }
-  .ccc {
+  .char {
     background-image: url(${Char});
     width: 35rem;
     height: 18.75rem;

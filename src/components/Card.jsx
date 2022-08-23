@@ -41,7 +41,6 @@ const Card = ({ filter, item, result }) => {
     } else if (filter === "5") {
       if (result.length !== 0) {
         const resultData = result.filter((List) => {
-          console.log(List.building_count);
           return List.building_count >= 5;
         });
         setCardList(resultData);
