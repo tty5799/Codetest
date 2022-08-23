@@ -6,6 +6,7 @@ import Search from "../components/Search";
 const Main = () => {
   const [dataList, setDataList] = useState([]);
 
+  // 서버 통신
   useEffect(() => {
     axios
       .get(

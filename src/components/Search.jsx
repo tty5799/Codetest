@@ -11,6 +11,7 @@ const Search = ({ dataList }) => {
     setSearchData(e.target.value);
   };
 
+  // 엔터 이벤트
   const KeyhandleEvent = (e) => {
     if (e.nativeEvent.isComposing) {
       return;
@@ -23,8 +24,10 @@ const Search = ({ dataList }) => {
 
   const searchHandle = (e) => {
     if (searchData === "") {
+      // 빈값을 검색했을때 Card컴포넌트에서 기본값을 불러오기 위한 state
       setResultDataList([]);
     } else {
+      // 검색 기능
       const resultData = dataList.filter((itmeList) => {
         return itmeList.nickname
           .toUpperCase()
@@ -36,7 +39,7 @@ const Search = ({ dataList }) => {
       setSearchData("");
     }
   };
-
+  // 검색 미리보기
   const filtered = dataList.filter((itmeList) => {
     return itmeList.nickname.toUpperCase().includes(searchData.toUpperCase());
   });

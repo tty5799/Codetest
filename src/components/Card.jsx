@@ -14,9 +14,13 @@ const Card = ({ filter, item, result }) => {
   const offset = (page - 1) * limit;
 
   useEffect(() => {
+    // 검색 & 필터 기능
+
+    // 처음 렌더링 될때 default값
     setCardList(item);
     setResultState(false);
 
+    // 검색했을때에 로직
     if (result.length !== 0) {
       setCardList(result);
       setResultState(true);
@@ -24,6 +28,8 @@ const Card = ({ filter, item, result }) => {
       setCardList(item);
       setResultState(false);
     }
+    // 필터마다 조건문을 걸어 필터에서도 겁색된 값을 유지하며
+    // 보여지기 위한 로직
     if (filter === "main") {
       if (result.length !== 0) {
         setCardList(result);

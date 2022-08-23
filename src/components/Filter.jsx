@@ -16,7 +16,7 @@ const Filter = (props) => {
   return (
     <>
       <FilterBox>
-        <div style={{ display: "flex", justifyContent: "space-between" }}>
+        <HeadBox>
           {open ? (
             <TitleBox>
               <span className="text">화섬 아파트 NFT</span>
@@ -31,7 +31,7 @@ const Filter = (props) => {
           <div className="filterBtn" onClick={openHandel}>
             {open ? <ActiveIcon /> : <Icon />}
           </div>
-        </div>
+        </HeadBox>
         <Line />
       </FilterBox>
 
@@ -82,6 +82,11 @@ const Filter = (props) => {
     </>
   );
 };
+
+const HeadBox = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
 
 const BuildingBox = styled.div`
   width: 35rem;
