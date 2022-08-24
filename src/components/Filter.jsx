@@ -40,31 +40,31 @@ const Filter = (props) => {
           <BuildingFilter>
             <div className="title">보유 아파트</div>
             <div
-              className={`btn ${tab === "all" ? "active" : "inactive"}`}
+              className={` ${tab === "all" ? "active" : "inactive"}`}
               onClick={() => setTab("all")}
             >
               전체
             </div>
             <div
-              className={`btn ${tab === "5" ? "active" : "inactive"}`}
+              className={` ${tab === "5" ? "active" : "inactive"}`}
               onClick={() => setTab("5")}
             >
               5개 이상
             </div>
             <div
-              className={`btn ${tab === "4" ? "active" : "inactive"}`}
+              className={` ${tab === "4" ? "active" : "inactive"}`}
               onClick={() => setTab("4")}
             >
               4개
             </div>
             <div
-              className={`btn ${tab === "3" ? "active" : "inactive"}`}
+              className={` ${tab === "3" ? "active" : "inactive"}`}
               onClick={() => setTab("3")}
             >
               3개
             </div>
             <div
-              className={`btn ${tab === "2" ? "active" : "inactive"}`}
+              className={` ${tab === "2" ? "active" : "inactive"}`}
               onClick={() => setTab("2")}
             >
               2개

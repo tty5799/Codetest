@@ -7,6 +7,7 @@ import { ReactComponent as NoData } from "../assets/nodata.svg";
 
 const Card = ({ filter, item, result }) => {
   const [limit, setLimit] = useState(8);
+  // 한 페이지에 보여져야하는 갯수 설정
   const [page, setPage] = useState(1);
   const [CardList, setCardList] = useState([]);
   const [resultState, setResultState] = useState(false);
